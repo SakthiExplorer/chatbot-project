@@ -1,7 +1,7 @@
 from Adafruit_IO import Client
 
 from telegram.ext import Updater,MessageHandler,Filters
-aio = Client('SakthiExplorer', 'aio_nkVt04ZxZKcX1BR6Mu7c87dIWn0w')
+aio = Client(username, Adafruit_API)
 def demo1(bot,update):
   chat_id=bot.message.chat_id
   path = 'https://image.shutterstock.com/image-vector/fine-sticker-social-media-content-260nw-1138003112.jpg'
@@ -70,7 +70,6 @@ def func1(bot,update):
   else:
     bot.message.reply_text("Invalid Text")
 
-BOT_TOKEN = '1840100653:AAEdXh7wJ0_H_TKwudVyboxzDuLcXgbfMhU'
 u = Updater(BOT_TOKEN,use_context=True)
 dp = u.dispatcher
 dp.add_handler(MessageHandler(Filters.text,func1))
