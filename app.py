@@ -1,13 +1,14 @@
 from Adafruit_IO import Client
 from telegram.ext import Updater,MessageHandler,Filters
 import os
+import webbrowser
 username = os.getenv('username')
 Adafruit_API = os.getenv('Adafruit_API')
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 aio = Client(username, Adafruit_API)
 def demo1(bot,update):
   chat_id=bot.message.chat_id
-  path = 'https://image.shutterstock.com/image-vector/fine-sticker-social-media-content-260nw-1138003112.jpg'
+  path = webbrowser.open('https://thingspeak.com/channels/1405237/widgets/319098')
   bot.message.reply_text('I am fine')
   update.bot.sendPhoto(chat_id=chat_id,photo=path)
 
